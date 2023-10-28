@@ -52,11 +52,11 @@ type DiskListData struct {
 	FileList       []File   `json:"file_list"`
 	PdirKey        string   `json:"pdir_key"`
 	FinishFlag     bool     `json:"finish_flag"`
-	TotalDirCount  int      `json:"total_dir_count"`
-	TotalFileCount int      `json:"total_file_count"`
-	TotalSpace     int      `json:"total_space"`
-	HideDirCount   int      `json:"hide_dir_count"`
-	HideFileCount  int      `json:"hide_file_count"`
+	TotalDirCount  int64    `json:"total_dir_count"`
+	TotalFileCount int64    `json:"total_file_count"`
+	TotalSpace     int64    `json:"total_space"`
+	HideDirCount   int64    `json:"hide_dir_count"`
+	HideFileCount  int64    `json:"hide_file_count"`
 }
 
 // 查询文件、文件夹
@@ -327,7 +327,7 @@ type UploadAuthData struct {
 type UploadChannelData struct {
 	ID     int   `json:"id"`
 	Offset int64 `json:"offset"`
-	Len    int   `json:"len"`
+	Len    int64 `json:"len"`
 }
 
 type PreUploadData struct {
@@ -345,7 +345,7 @@ type PreUploadData struct {
 	FlowState  int `json:"flow_state"`
 
 	UploadState     int `json:"upload_state"`      // 上传状态 1:上传未完成,3:该通道无剩余分片，2:上传完成
-	UploadedDataLen int `json:"uploaded_data_len"` // 已经上传的长度
+	UploadedDataLen int64 `json:"uploaded_data_len"` // 已经上传的长度
 }
 
 type UpdloadFileParam struct {
